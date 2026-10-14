@@ -140,37 +140,65 @@ section[data-testid="stSidebar"] div[role="radiogroup"] label:hover {
 }
 
 
-/* --------------------------------------------------------------------------
-   FRAMEWORK BANNER
-   -------------------------------------------------------------------------- */
+/* ============================================================
+   MASTER FRAMEWORK HEADER
+   ============================================================ */
 
 .framework-banner {
-    background: linear-gradient(110deg, #DDF3FF, #EFF9FF);
-    border: 1px solid #A9D8EF;
+    background: linear-gradient(
+        105deg,
+        #CDEEFF 0%,
+        #E8F7FF 100%
+    );
+
+    border: 1px solid #9FD4ED;
     border-left: 7px solid #14532D;
+
     border-radius: 12px;
-    padding: 16px 22px;
-    margin-bottom: 0.85rem;
-    box-shadow: 0 3px 10px rgba(23,63,44,0.06);
+
+    padding: 18px 24px 17px 24px;
+
+    margin-top: 0.35rem;
+    margin-bottom: 1.25rem;
+
+    box-shadow:
+        0 3px 10px
+        rgba(20, 83, 45, 0.07);
+
+    position: relative;
+    z-index: 1;
 }
 
 .framework-name {
-    color: #704522;
-    font-size: 1.30rem;
-    line-height: 1.25;
-    font-weight: 800;
+    color: #704522 !important;
+
+    font-size: 1.55rem !important;
+    line-height: 1.25 !important;
+
+    font-weight: 850 !important;
     font-style: italic;
-    margin: 0;
+
+    letter-spacing: -0.01em;
+
+    margin: 0 0 5px 0 !important;
+    padding: 0 !important;
+
+    opacity: 1 !important;
 }
 
 .framework-subtitle {
-    color: #14532D;
-    font-size: 0.90rem;
-    font-weight: 650;
-    margin-top: 4px;
+    color: #14532D !important;
+
+    font-size: 0.96rem !important;
+    line-height: 1.30 !important;
+
+    font-weight: 750 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    opacity: 1 !important;
 }
-
-
 /* --------------------------------------------------------------------------
    PAGE TITLES
    -------------------------------------------------------------------------- */
