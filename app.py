@@ -49,15 +49,17 @@ st.markdown(
     }
 
     .block-container {
-        max-width: 1180px;
-        padding-top: 1.0rem;
-        padding-bottom: 1.5rem;
+    max-width: 1180px;
+    padding-top: 0.35rem;
+    padding-bottom: 1.25rem;
     }
 
     div[data-testid="stVerticalBlock"] {
-        gap: 0.65rem;
+    gap: 0.50rem;
     }
-
+   header[data-testid="stHeader"] {
+    background: transparent;
+    }
 
     /* ============================================================
        SIDEBAR — JUNGLE GREEN
@@ -108,64 +110,70 @@ st.markdown(
         background: rgba(255, 255, 255, 0.15);
         border-color: rgba(255, 255, 255, 0.30);
     }
+/* ============================================================
+   SIDEBAR WIDTH
+   ============================================================ */
 
+section[data-testid="stSidebar"] {
+    width: 300px !important;
+    min-width: 300px !important;
+    max-width: 300px !important;
+}
 
-    /* ============================================================
-       FRAMEWORK BANNER
-       ============================================================ */
+section[data-testid="stSidebar"] > div:first-child {
+    width: 300px !important;
+}
 
-    .framework-banner {
-        background: linear-gradient(
-            110deg,
-            #D9F1FF 0%,
-            #EAF8FF 100%
-        );
+/* ============================================================
+   FRAMEWORK BANNER
+   ============================================================ */
 
-        border: 1px solid #B8DFF1;
-        border-left: 7px solid #14532D;
+.framework-banner {
+    background: linear-gradient(
+        110deg,
+        #D9F1FF 0%,
+        #EAF8FF 100%
+    );
 
-        border-radius: 13px;
+    border: 1px solid #B8DFF1;
+    border-left: 6px solid #14532D;
 
-        padding: 17px 24px;
+    border-radius: 11px;
 
-        margin:
-            0
-            0
-            1.05rem
-            0;
+    padding: 14px 20px;
 
-        box-shadow:
-            0 3px 12px
-            rgba(26, 75, 95, 0.07);
-    }
+    margin: 0 0 0.85rem 0;
 
-    .framework-name {
-        color: #6B4423;
+    box-shadow:
+        0 2px 8px
+        rgba(26, 75, 95, 0.06);
+}
 
-        font-size: 1.32rem;
+.framework-name {
+    color: #704522;
 
-        line-height: 1.25;
+    font-size: 1.25rem;
 
-        font-weight: 800;
+    line-height: 1.25;
 
-        font-style: italic;
+    font-weight: 800;
 
-        letter-spacing: 0.01em;
+    font-style: italic;
 
-        margin: 0;
-    }
+    letter-spacing: 0.005em;
 
-    .framework-subtitle {
-        color: #14532D;
+    margin: 0;
+}
 
-        font-size: 0.93rem;
+.framework-subtitle {
+    color: #14532D;
 
-        font-weight: 650;
+    font-size: 0.90rem;
 
-        margin-top: 4px;
-    }
+    font-weight: 650;
 
-
+    margin-top: 3px;
+}
     /* ============================================================
        HEADINGS
        ============================================================ */
@@ -208,16 +216,16 @@ st.markdown(
        ============================================================ */
 
     div[data-testid="stVerticalBlockBorderWrapper"] {
-        background: #FFFFFF;
+    background: #FFFFFF;
 
-        border: 1px solid #DCE6E0 !important;
+    border: 1px solid #DCE6E0 !important;
 
-        border-radius: 12px !important;
+    border-radius: 11px !important;
 
-        box-shadow:
-            0 2px 9px
-            rgba(22, 65, 46, 0.045);
-    }
+    box-shadow:
+        0 2px 7px
+        rgba(22, 65, 46, 0.04);
+}
 
 
     /* ============================================================
