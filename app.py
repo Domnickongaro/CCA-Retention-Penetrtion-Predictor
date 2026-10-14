@@ -28,402 +28,376 @@ st.set_page_config(
 
 
 # =============================================================================
-# 2. USER INTERFACE STYLING
+# 2. COLOUR PALETTE
+# =============================================================================
+
+JUNGLE = "#14532D"
+JUNGLE_DARK = "#0B3D22"
+GREEN = "#1F7A4D"
+SKY = "#DDF3FF"
+SKY_BORDER = "#A9D8EF"
+BROWN = "#704522"
+TEXT = "#24382E"
+MUTED = "#66776E"
+PAGE_BG = "#F4F8F5"
+CARD_BG = "#FFFFFF"
+SOFT_GREEN = "#EEF8F1"
+SOFT_BLUE = "#F1F9FD"
+BORDER = "#D9E5DE"
+
+
+# =============================================================================
+# 3. CSS
 # =============================================================================
 
 st.markdown(
     """
-    <style>
+<style>
 
-    /* ============================================================
-       GLOBAL
-       ============================================================ */
+/* --------------------------------------------------------------------------
+   APP
+   -------------------------------------------------------------------------- */
 
-    .stApp {
-        background: #F5F8F6;
-    }
+.stApp {
+    background: #F4F8F5;
+}
 
-    html, body, [class*="css"] {
-        font-family: "Segoe UI", Arial, sans-serif;
-        color: #26352F;
-    }
+html, body, [class*="css"] {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #24382E;
+}
 
-    .block-container {
+.block-container {
     max-width: 1180px;
-    padding-top: 0.35rem;
-    padding-bottom: 1.25rem;
-    }
+    padding-top: 0.8rem;
+    padding-bottom: 1.2rem;
+}
 
-    div[data-testid="stVerticalBlock"] {
-    gap: 0.50rem;
-    }
-   header[data-testid="stHeader"] {
-    background: transparent;
-    }
+div[data-testid="stVerticalBlock"] {
+    gap: 0.55rem;
+}
 
-    /* ============================================================
-       SIDEBAR — JUNGLE GREEN
-       ============================================================ */
 
-    section[data-testid="stSidebar"] {
-        background: #14532D !important;
-        border-right: none !important;
-    }
+/* --------------------------------------------------------------------------
+   TOP STREAMLIT AREA
+   -------------------------------------------------------------------------- */
 
-    section[data-testid="stSidebar"] > div {
-        background: #14532D !important;
-    }
+header[data-testid="stHeader"] {
+    background: rgba(255,255,255,0.96);
+}
 
-    section[data-testid="stSidebar"] .block-container {
-        padding-top: 2rem;
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
-    }
 
-    section[data-testid="stSidebar"] p,
-    section[data-testid="stSidebar"] label,
-    section[data-testid="stSidebar"] span {
-        color: #F7FFF9 !important;
-    }
-
-    section[data-testid="stSidebar"] h3 {
-        color: #FFFFFF !important;
-        font-size: 0.82rem !important;
-        font-weight: 800 !important;
-        letter-spacing: 0.11em !important;
-        margin-bottom: 0.8rem !important;
-    }
-
-    section[data-testid="stSidebar"] div[role="radiogroup"] {
-        gap: 0.55rem;
-    }
-
-    section[data-testid="stSidebar"] div[role="radiogroup"] label {
-        background: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        border-radius: 9px;
-        padding: 0.58rem 0.65rem;
-        transition: all 0.15s ease;
-    }
-
-    section[data-testid="stSidebar"] div[role="radiogroup"] label:hover {
-        background: rgba(255, 255, 255, 0.15);
-        border-color: rgba(255, 255, 255, 0.30);
-    }
-/* ============================================================
-   SIDEBAR WIDTH
-   ============================================================ */
+/* --------------------------------------------------------------------------
+   SIDEBAR
+   -------------------------------------------------------------------------- */
 
 section[data-testid="stSidebar"] {
+    background: #14532D !important;
     width: 300px !important;
     min-width: 300px !important;
     max-width: 300px !important;
+    border-right: none !important;
 }
 
 section[data-testid="stSidebar"] > div:first-child {
     width: 300px !important;
+    background: #14532D !important;
 }
 
-/* ============================================================
+section[data-testid="stSidebar"] .block-container {
+    padding-top: 2.2rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+section[data-testid="stSidebar"] h3 {
+    color: white !important;
+    font-size: 0.82rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.12em !important;
+    margin-bottom: 0.9rem !important;
+}
+
+section[data-testid="stSidebar"] p,
+section[data-testid="stSidebar"] label,
+section[data-testid="stSidebar"] span {
+    color: #F8FFF9 !important;
+}
+
+section[data-testid="stSidebar"] div[role="radiogroup"] {
+    gap: 0.55rem;
+}
+
+section[data-testid="stSidebar"] div[role="radiogroup"] label {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.17);
+    border-radius: 9px;
+    padding: 0.65rem 0.65rem;
+}
+
+section[data-testid="stSidebar"] div[role="radiogroup"] label:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+
+/* --------------------------------------------------------------------------
    FRAMEWORK BANNER
-   ============================================================ */
+   -------------------------------------------------------------------------- */
 
 .framework-banner {
-    background: linear-gradient(
-        110deg,
-        #D9F1FF 0%,
-        #EAF8FF 100%
-    );
-
-    border: 1px solid #B8DFF1;
-    border-left: 6px solid #14532D;
-
-    border-radius: 11px;
-
-    padding: 14px 20px;
-
-    margin: 0 0 0.85rem 0;
-
-    box-shadow:
-        0 2px 8px
-        rgba(26, 75, 95, 0.06);
+    background: linear-gradient(110deg, #DDF3FF, #EFF9FF);
+    border: 1px solid #A9D8EF;
+    border-left: 7px solid #14532D;
+    border-radius: 12px;
+    padding: 16px 22px;
+    margin-bottom: 0.85rem;
+    box-shadow: 0 3px 10px rgba(23,63,44,0.06);
 }
 
 .framework-name {
     color: #704522;
-
-    font-size: 1.25rem;
-
+    font-size: 1.30rem;
     line-height: 1.25;
-
     font-weight: 800;
-
     font-style: italic;
-
-    letter-spacing: 0.005em;
-
     margin: 0;
 }
 
 .framework-subtitle {
     color: #14532D;
-
     font-size: 0.90rem;
-
     font-weight: 650;
-
-    margin-top: 3px;
+    margin-top: 4px;
 }
-    /* ============================================================
-       HEADINGS
-       ============================================================ */
-
-    h1 {
-        color: #173F2C !important;
-
-        font-size: 1.85rem !important;
-
-        font-weight: 760 !important;
-
-        letter-spacing: -0.025em;
-
-        margin-top: 0 !important;
-
-        margin-bottom: 0.15rem !important;
-    }
-
-    h2 {
-        color: #173F2C !important;
-
-        font-size: 1.24rem !important;
-
-        font-weight: 750 !important;
-
-        margin-top: 0.35rem !important;
-    }
-
-    h3 {
-        color: #214D39 !important;
-
-        font-size: 1.05rem !important;
-
-        font-weight: 730 !important;
-    }
 
 
-    /* ============================================================
-       MAIN CARDS
-       ============================================================ */
+/* --------------------------------------------------------------------------
+   PAGE TITLES
+   -------------------------------------------------------------------------- */
 
-    div[data-testid="stVerticalBlockBorderWrapper"] {
+h1 {
+    color: #173F2C !important;
+    font-size: 1.70rem !important;
+    font-weight: 780 !important;
+    letter-spacing: -0.025em;
+    margin-top: 0.1rem !important;
+    margin-bottom: 0.2rem !important;
+}
+
+h2 {
+    color: #173F2C !important;
+    font-size: 1.16rem !important;
+    font-weight: 750 !important;
+    margin-top: 0.25rem !important;
+    margin-bottom: 0.20rem !important;
+}
+
+h3 {
+    color: #214D39 !important;
+    font-size: 1.02rem !important;
+    font-weight: 730 !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   CARDS
+   -------------------------------------------------------------------------- */
+
+div[data-testid="stVerticalBlockBorderWrapper"] {
     background: #FFFFFF;
-
-    border: 1px solid #DCE6E0 !important;
-
-    border-radius: 11px !important;
-
-    box-shadow:
-        0 2px 7px
-        rgba(22, 65, 46, 0.04);
+    border: 1px solid #D9E5DE !important;
+    border-radius: 12px !important;
+    box-shadow: 0 2px 8px rgba(20,83,45,0.045);
 }
 
 
-    /* ============================================================
-       SECTION LABELS
-       ============================================================ */
+/* --------------------------------------------------------------------------
+   SECTION LABEL
+   -------------------------------------------------------------------------- */
 
-    .section-label {
-        color: #6B4423;
+.section-label {
+    color: #704522;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.11em;
+    margin-top: 0.10rem;
+    margin-bottom: -0.10rem;
+}
 
-        font-size: 0.74rem;
 
-        font-weight: 800;
+/* --------------------------------------------------------------------------
+   INPUTS
+   -------------------------------------------------------------------------- */
 
-        letter-spacing: 0.10em;
+div[data-baseweb="input"] {
+    background: #F8FAF9 !important;
+    border-radius: 8px !important;
+}
 
-        margin-top: 0.20rem;
+div[data-testid="stNumberInput"] input {
+    font-size: 0.94rem;
+    color: #24382E;
+}
 
-        margin-bottom: -0.15rem;
+div[data-testid="stNumberInput"] label p {
+    color: #344B40;
+    font-weight: 650;
+}
+
+
+/* --------------------------------------------------------------------------
+   BUTTONS
+   -------------------------------------------------------------------------- */
+
+div[data-testid="stButton"] button {
+    min-height: 44px;
+    background: #176B45 !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-size: 0.94rem;
+    font-weight: 750;
+    box-shadow: 0 2px 5px rgba(20,83,45,0.14);
+}
+
+div[data-testid="stButton"] button:hover {
+    background: #0F5132 !important;
+    color: white !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   METRICS
+   -------------------------------------------------------------------------- */
+
+div[data-testid="stMetric"] {
+    background: #F4FAF6;
+    border: 1px solid #D7E9DD;
+    border-top: 4px solid #258657;
+    border-radius: 10px;
+    padding: 12px 14px;
+}
+
+div[data-testid="stMetricLabel"] {
+    color: #53675D;
+    font-weight: 650;
+}
+
+div[data-testid="stMetricValue"] {
+    color: #143D2A;
+    font-weight: 760;
+}
+
+
+/* --------------------------------------------------------------------------
+   RESULT RANGE
+   -------------------------------------------------------------------------- */
+
+.result-range {
+    background: #F1F9FD;
+    border-left: 3px solid #5BA7C9;
+    border-radius: 6px;
+    padding: 8px 11px;
+    margin-top: 5px;
+    font-size: 0.88rem;
+    color: #455B50;
+}
+
+
+/* --------------------------------------------------------------------------
+   STATUS CARD
+   -------------------------------------------------------------------------- */
+
+.status-good {
+    background: #EAF7EE;
+    border-left: 5px solid #218653;
+    border-radius: 8px;
+    padding: 11px 14px;
+    color: #17492F;
+    font-weight: 650;
+}
+
+.status-watch {
+    background: #FFF7E5;
+    border-left: 5px solid #C58A19;
+    border-radius: 8px;
+    padding: 11px 14px;
+    color: #6A4B10;
+    font-weight: 650;
+}
+
+.status-low {
+    background: #FFF0EE;
+    border-left: 5px solid #B94A3D;
+    border-radius: 8px;
+    padding: 11px 14px;
+    color: #713229;
+    font-weight: 650;
+}
+
+
+/* --------------------------------------------------------------------------
+   FOOTER
+   -------------------------------------------------------------------------- */
+
+.app-footer {
+    text-align: center;
+    color: #819087;
+    font-size: 0.75rem;
+    margin-top: 1rem;
+}
+
+
+/* --------------------------------------------------------------------------
+   MOBILE / SMALL SCREENS
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    section[data-testid="stSidebar"] {
+        width: 270px !important;
+        min-width: 270px !important;
     }
 
-
-    /* ============================================================
-       INPUTS
-       ============================================================ */
-
-    div[data-baseweb="input"] {
-        border-radius: 8px !important;
-        background: #FAFCFB;
+    .framework-name {
+        font-size: 1.08rem;
     }
 
-    div[data-testid="stNumberInput"] input {
-        font-size: 0.95rem;
-        color: #26352F;
-    }
-
-    div[data-testid="stNumberInput"] label p {
-        font-weight: 650;
-        color: #344B40;
-    }
+}
 
 
-    /* ============================================================
-       BUTTONS
-       ============================================================ */
+/* --------------------------------------------------------------------------
+   HIDE UNNECESSARY STREAMLIT DECORATION
+   -------------------------------------------------------------------------- */
 
-    div[data-testid="stButton"] button,
-    div[data-testid="stFormSubmitButton"] button {
+#MainMenu {
+    visibility: hidden;
+}
 
-        min-height: 44px;
+footer {
+    visibility: hidden;
+}
 
-        background: #176B45 !important;
-
-        color: #FFFFFF !important;
-
-        border: none !important;
-
-        border-radius: 8px !important;
-
-        font-size: 0.95rem;
-
-        font-weight: 750;
-
-        box-shadow:
-            0 2px 5px
-            rgba(20, 83, 45, 0.14);
-
-        transition:
-            background 0.15s ease,
-            transform 0.15s ease;
-    }
-
-    div[data-testid="stButton"] button:hover,
-    div[data-testid="stFormSubmitButton"] button:hover {
-
-        background: #0F5132 !important;
-
-        color: #FFFFFF !important;
-
-        transform: translateY(-1px);
-    }
-
-
-    /* ============================================================
-       METRIC CARDS
-       ============================================================ */
-
-    div[data-testid="stMetric"] {
-
-        background: #F5FBF7;
-
-        border: 1px solid #D5E8DC;
-
-        border-top: 4px solid #258657;
-
-        border-radius: 10px;
-
-        padding: 13px 15px;
-
-        box-shadow:
-            0 2px 7px
-            rgba(20, 83, 45, 0.04);
-    }
-
-    div[data-testid="stMetricLabel"] {
-        color: #53675D;
-        font-weight: 650;
-    }
-
-    div[data-testid="stMetricValue"] {
-        color: #143D2A;
-        font-weight: 760;
-    }
-
-
-    /* ============================================================
-       ALERTS
-       ============================================================ */
-
-    div[data-testid="stAlert"] {
-        border-radius: 9px;
-        font-size: 0.93rem;
-    }
-
-
-    /* ============================================================
-       SMALL RESULT RANGE
-       ============================================================ */
-
-    .result-range {
-        background: #F8FAF9;
-
-        border-left: 3px solid #8BBEA2;
-
-        border-radius: 6px;
-
-        padding: 8px 11px;
-
-        margin-top: 5px;
-
-        font-size: 0.90rem;
-
-        color: #455B50;
-    }
-
-
-    /* ============================================================
-       FOOTER
-       ============================================================ */
-
-    .app-footer {
-        text-align: center;
-
-        color: #7A8B82;
-
-        font-size: 0.76rem;
-
-        margin-top: 1.2rem;
-
-        padding-top: 0.6rem;
-    }
-
-
-    /* ============================================================
-       HIDE STREAMLIT DECORATION
-       ============================================================ */
-
-    #MainMenu {
-        visibility: hidden;
-    }
-
-    footer {
-        visibility: hidden;
-    }
-
-    </style>
-    """,
+</style>
+""",
     unsafe_allow_html=True,
 )
 
 
 # =============================================================================
-# 3. PROJECT PATHS
+# 4. PROJECT PATHS
 # =============================================================================
 
 ROOT = Path(__file__).resolve().parent
 
 
 def resolve_model_path(filename):
-    """
-    Allow models to be stored either beside app.py
-    or inside a models/ directory.
-    """
 
+    model_folder = ROOT / "models" / filename
     root_file = ROOT / filename
-    model_file = ROOT / "models" / filename
 
-    if model_file.exists():
-        return model_file
+    if model_folder.exists():
+        return model_folder
 
     return root_file
 
@@ -436,7 +410,6 @@ GP_RCCA_FILE = resolve_model_path(
     "final_gp_Rcca.joblib"
 )
 
-
 CALIBRATION_FILE = (
     ROOT
     / "pipeline_data"
@@ -445,7 +418,7 @@ CALIBRATION_FILE = (
 
 
 # =============================================================================
-# 4. MODEL FEATURE ORDER
+# 5. MODEL FEATURES
 # =============================================================================
 
 PREDICTORS = [
@@ -459,45 +432,42 @@ PREDICTORS = [
 
 
 # =============================================================================
-# 5. VALIDATED INPUT RANGES
+# 6. VALID INPUT RANGES
 # =============================================================================
 
 BOUNDS = {
 
-    "Mc_percent": (
-        14.0,
-        45.0,
-    ),
+    "Mc_percent": (14.0, 45.0),
 
     "rho_od": (
         445.2003,
-        1005.3631,
+        1005.3631
     ),
 
     "CCA_percent": (
         1.0,
-        10.0,
+        10.0
     ),
 
     "pressure": (
         1.0,
-        14.0,
+        14.0
     ),
 
     "vacuum": (
         1.0,
-        8.0,
+        8.0
     ),
 
     "duration": (
         10.0,
-        120.0,
+        120.0
     ),
 }
 
 
 # =============================================================================
-# 6. CONSTANTS
+# 7. CONSTANTS
 # =============================================================================
 
 RETENTION_THRESHOLD = 20.0
@@ -508,18 +478,20 @@ MIN_STD = 1e-12
 
 
 # =============================================================================
-# 7. LOAD MODELS
+# 8. LOAD MODELS
 # =============================================================================
 
 @st.cache_resource
 def load_models():
 
     if not GP_LP_FILE.exists():
+
         raise FileNotFoundError(
             f"Missing model: {GP_LP_FILE}"
         )
 
     if not GP_RCCA_FILE.exists():
+
         raise FileNotFoundError(
             f"Missing model: {GP_RCCA_FILE}"
         )
@@ -537,7 +509,7 @@ def load_models():
 
 
 # =============================================================================
-# 8. LOAD UNCERTAINTY FACTORS
+# 9. LOAD CALIBRATION FACTORS
 # =============================================================================
 
 @st.cache_resource
@@ -549,6 +521,7 @@ def load_uncertainty_factors():
     }
 
     if not CALIBRATION_FILE.exists():
+
         return factors
 
     try:
@@ -559,12 +532,13 @@ def load_uncertainty_factors():
 
         required = {
             "Response",
-            "Calibration_Factor",
+            "Calibration_Factor"
         }
 
         if not required.issubset(
             table.columns
         ):
+
             return factors
 
         for response in factors:
@@ -582,13 +556,14 @@ def load_uncertainty_factors():
                 )
 
     except Exception:
+
         return factors
 
     return factors
 
 
 # =============================================================================
-# 9. INITIALISE MODELS
+# 10. INITIALISE
 # =============================================================================
 
 try:
@@ -602,14 +577,14 @@ try:
 except Exception:
 
     st.error(
-        "Prediction models could not be loaded."
+        "The prediction models could not be loaded."
     )
 
     st.stop()
 
 
 # =============================================================================
-# 10. NORMAL CDF
+# 11. SUPPORT FUNCTIONS
 # =============================================================================
 
 def normal_cdf(value):
@@ -629,10 +604,6 @@ def normal_cdf(value):
     )
 
 
-# =============================================================================
-# 11. CREATE MODEL INPUT
-# =============================================================================
-
 def create_input(
     mc_percent,
     rho_od,
@@ -642,36 +613,18 @@ def create_input(
     duration,
 ):
 
-    """
-    User enters moisture content and CCA concentration
-    as percentages.
-
-    Frozen models expect them as fractions.
-    """
-
     return pd.DataFrame(
         [[
-
             mc_percent / 100.0,
-
             rho_od,
-
             cca_percent / 100.0,
-
             pressure,
-
             vacuum,
-
             duration,
-
         ]],
         columns=PREDICTORS,
     )
 
-
-# =============================================================================
-# 12. PREDICT ONE RESPONSE
-# =============================================================================
 
 def predict_response(
     model,
@@ -695,7 +648,7 @@ def predict_response(
     calibrated_std = (
         max(
             raw_std,
-            MIN_STD,
+            MIN_STD
         )
         *
         uncertainty_factor
@@ -707,18 +660,6 @@ def predict_response(
         calibrated_std
     )
 
-    lower = (
-        mean
-        -
-        margin
-    )
-
-    upper = (
-        mean
-        +
-        margin
-    )
-
     return {
 
         "mean": mean,
@@ -727,15 +668,11 @@ def predict_response(
 
         "margin": margin,
 
-        "lower": lower,
+        "lower": mean - margin,
 
-        "upper": upper,
+        "upper": mean + margin,
     }
 
-
-# =============================================================================
-# 13. COMPLETE TREATMENT PREDICTION
-# =============================================================================
 
 def predict_treatment(
     mc_percent,
@@ -773,7 +710,7 @@ def predict_treatment(
         rcca["mean"]
     ) / max(
         rcca["std"],
-        MIN_STD,
+        MIN_STD
     )
 
     p_below = normal_cdf(z)
@@ -791,7 +728,7 @@ def predict_treatment(
 
 
 # =============================================================================
-# 14. SIDEBAR
+# 12. SIDEBAR
 # =============================================================================
 
 with st.sidebar:
@@ -811,29 +748,33 @@ with st.sidebar:
 
 
 # =============================================================================
-# 15. FRAMEWORK BANNER
+# 13. FRAMEWORK HEADER
+# =============================================================================
+#
+# IMPORTANT:
+# Keep this HTML on ONE physical Python string.
+# This prevents Streamlit from displaying the HTML tags.
 # =============================================================================
 
+banner_html = (
+    '<div class="framework-banner">'
+    '<div class="framework-name">'
+    'GP–NSGA-II Uncertainty-Aware CCA Treatment Framework'
+    '</div>'
+    '<div class="framework-subtitle">'
+    'Eucalyptus Wood Treatment Decision Support'
+    '</div>'
+    '</div>'
+)
+
 st.markdown(
-    """
-    <div class="framework-banner">
-
-        <div class="framework-name">
-            GP–NSGA-II Uncertainty-Aware CCA Treatment Framework
-        </div>
-
-        <div class="framework-subtitle">
-            Eucalyptus Wood Treatment Decision Support
-        </div>
-
-    </div>
-    """,
+    banner_html,
     unsafe_allow_html=True,
 )
 
 
 # =============================================================================
-# 16. FORWARD PREDICTION
+# 14. FORWARD PREDICTION
 # =============================================================================
 
 if mode == "Predict Treatment Results":
@@ -842,45 +783,34 @@ if mode == "Predict Treatment Results":
         "Predict Treatment Results"
     )
 
-    # -------------------------------------------------------------------------
-    # INPUT CARD
-    # -------------------------------------------------------------------------
-
     with st.container(
         border=True
     ):
 
         st.subheader(
-            "Enter Treatment Details"
+            "Treatment Inputs"
         )
 
         # ---------------------------------------------------------------------
-        # WOOD DETAILS
+        # WOOD
         # ---------------------------------------------------------------------
 
         st.markdown(
-            """
-            <div class="section-label">
-                WOOD DETAILS
-            </div>
-            """,
+            '<div class="section-label">WOOD</div>',
             unsafe_allow_html=True,
         )
 
         wood1, wood2 = st.columns(
-            2
+            2,
+            gap="medium"
         )
 
         with wood1:
 
             mc_percent = st.number_input(
                 "Moisture content (%)",
-                min_value=BOUNDS[
-                    "Mc_percent"
-                ][0],
-                max_value=BOUNDS[
-                    "Mc_percent"
-                ][1],
+                min_value=BOUNDS["Mc_percent"][0],
+                max_value=BOUNDS["Mc_percent"][1],
                 value=28.0,
                 step=1.0,
             )
@@ -889,43 +819,32 @@ if mode == "Predict Treatment Results":
 
             rho_od = st.number_input(
                 "Wood density (kg/m³)",
-                min_value=BOUNDS[
-                    "rho_od"
-                ][0],
-                max_value=BOUNDS[
-                    "rho_od"
-                ][1],
+                min_value=BOUNDS["rho_od"][0],
+                max_value=BOUNDS["rho_od"][1],
                 value=725.0,
                 step=5.0,
             )
 
         # ---------------------------------------------------------------------
-        # TREATMENT SETTINGS
+        # TREATMENT
         # ---------------------------------------------------------------------
 
         st.markdown(
-            """
-            <div class="section-label">
-                TREATMENT SETTINGS
-            </div>
-            """,
+            '<div class="section-label">TREATMENT</div>',
             unsafe_allow_html=True,
         )
 
         c1, c2, c3, c4 = st.columns(
-            4
+            4,
+            gap="medium"
         )
 
         with c1:
 
             cca_percent = st.number_input(
                 "CCA concentration (%)",
-                min_value=BOUNDS[
-                    "CCA_percent"
-                ][0],
-                max_value=BOUNDS[
-                    "CCA_percent"
-                ][1],
+                min_value=BOUNDS["CCA_percent"][0],
+                max_value=BOUNDS["CCA_percent"][1],
                 value=5.5,
                 step=0.1,
             )
@@ -934,12 +853,8 @@ if mode == "Predict Treatment Results":
 
             pressure = st.number_input(
                 "Pressure (kPa)",
-                min_value=BOUNDS[
-                    "pressure"
-                ][0],
-                max_value=BOUNDS[
-                    "pressure"
-                ][1],
+                min_value=BOUNDS["pressure"][0],
+                max_value=BOUNDS["pressure"][1],
                 value=7.5,
                 step=0.1,
             )
@@ -948,12 +863,8 @@ if mode == "Predict Treatment Results":
 
             vacuum = st.number_input(
                 "Vacuum (kPa)",
-                min_value=BOUNDS[
-                    "vacuum"
-                ][0],
-                max_value=BOUNDS[
-                    "vacuum"
-                ][1],
+                min_value=BOUNDS["vacuum"][0],
+                max_value=BOUNDS["vacuum"][1],
                 value=4.5,
                 step=0.1,
             )
@@ -962,25 +873,21 @@ if mode == "Predict Treatment Results":
 
             duration = st.number_input(
                 "Vacuum time (min)",
-                min_value=BOUNDS[
-                    "duration"
-                ][0],
-                max_value=BOUNDS[
-                    "duration"
-                ][1],
+                min_value=BOUNDS["duration"][0],
+                max_value=BOUNDS["duration"][1],
                 value=60.0,
                 step=1.0,
             )
 
         run_prediction = st.button(
-            "Predict Results",
+            "Predict Treatment Performance",
             type="primary",
             use_container_width=True,
         )
 
 
     # =========================================================================
-    # FORWARD RESULTS
+    # RESULTS
     # =========================================================================
 
     if run_prediction:
@@ -1012,15 +919,16 @@ if mode == "Predict Treatment Results":
 
 
         # ---------------------------------------------------------------------
-        # EXPECTED RESULTS
+        # PERFORMANCE
         # ---------------------------------------------------------------------
 
         st.subheader(
-            "Expected Results"
+            "Predicted Performance"
         )
 
         result1, result2 = st.columns(
-            2
+            2,
+            gap="medium"
         )
 
 
@@ -1035,11 +943,7 @@ if mode == "Predict Treatment Results":
             ):
 
                 st.markdown(
-                    """
-                    <div class="section-label">
-                        PENETRATION
-                    </div>
-                    """,
+                    '<div class="section-label">PENETRATION</div>',
                     unsafe_allow_html=True,
                 )
 
@@ -1049,12 +953,13 @@ if mode == "Predict Treatment Results":
                 )
 
                 st.markdown(
-                    f"""
-                    <div class="result-range">
-                        <strong>Expected range</strong><br>
-                        {lp['lower']:.2f} – {lp['upper']:.2f} mm
-                    </div>
-                    """,
+                    (
+                        '<div class="result-range">'
+                        '<strong>Likely range</strong><br>'
+                        f"{lp['lower']:.2f} – "
+                        f"{lp['upper']:.2f} mm"
+                        '</div>'
+                    ),
                     unsafe_allow_html=True,
                 )
 
@@ -1070,11 +975,7 @@ if mode == "Predict Treatment Results":
             ):
 
                 st.markdown(
-                    """
-                    <div class="section-label">
-                        CCA RETENTION
-                    </div>
-                    """,
+                    '<div class="section-label">CCA RETENTION</div>',
                     unsafe_allow_html=True,
                 )
 
@@ -1084,26 +985,28 @@ if mode == "Predict Treatment Results":
                 )
 
                 st.markdown(
-                    f"""
-                    <div class="result-range">
-                        <strong>Expected range</strong><br>
-                        {rcca['lower']:.2f} – {rcca['upper']:.2f} kg/m³
-                    </div>
-                    """,
+                    (
+                        '<div class="result-range">'
+                        '<strong>Likely range</strong><br>'
+                        f"{rcca['lower']:.2f} – "
+                        f"{rcca['upper']:.2f} kg/m³"
+                        '</div>'
+                    ),
                     unsafe_allow_html=True,
                 )
 
 
         # ---------------------------------------------------------------------
-        # TREATMENT CHECK
+        # RETENTION CHECK
         # ---------------------------------------------------------------------
 
         st.subheader(
-            "Treatment Check"
+            "Retention Check"
         )
 
         check1, check2 = st.columns(
-            2
+            2,
+            gap="medium"
         )
 
         with check1:
@@ -1116,13 +1019,13 @@ if mode == "Predict Treatment Results":
         with check2:
 
             st.metric(
-                "Risk of low retention",
+                "Chance of falling below requirement",
                 f"{p_below * 100:.1f}%",
             )
 
 
         # ---------------------------------------------------------------------
-        # SIMPLE INTERPRETATION
+        # SIMPLE USER MESSAGE
         # ---------------------------------------------------------------------
 
         if (
@@ -1130,8 +1033,11 @@ if mode == "Predict Treatment Results":
             >= RETENTION_THRESHOLD
         ):
 
-            st.success(
-                "✓ Retention is expected to meet the required level."
+            st.markdown(
+                '<div class="status-good">'
+                '✓ This treatment is expected to meet the retention requirement.'
+                '</div>',
+                unsafe_allow_html=True,
             )
 
         elif (
@@ -1139,19 +1045,27 @@ if mode == "Predict Treatment Results":
             >= RETENTION_THRESHOLD
         ):
 
-            st.warning(
-                "⚠ Retention may fall below the required level."
+            st.markdown(
+                '<div class="status-watch">'
+                '⚠ The expected retention meets the requirement, '
+                'but there is some uncertainty.'
+                '</div>',
+                unsafe_allow_html=True,
             )
 
         else:
 
-            st.error(
-                "✕ Retention is expected to be below the required level."
+            st.markdown(
+                '<div class="status-low">'
+                '✕ This treatment is expected to fall below '
+                'the retention requirement.'
+                '</div>',
+                unsafe_allow_html=True,
             )
 
 
 # =============================================================================
-# 17. TREATMENT FINDER
+# 15. TREATMENT FINDER
 # =============================================================================
 
 else:
@@ -1159,10 +1073,6 @@ else:
     st.title(
         "Find Treatment Settings"
     )
-
-    # -------------------------------------------------------------------------
-    # TARGET INPUT CARD
-    # -------------------------------------------------------------------------
 
     with st.container(
         border=True
@@ -1173,32 +1083,25 @@ else:
         )
 
         # ---------------------------------------------------------------------
-        # WOOD DETAILS
+        # WOOD
         # ---------------------------------------------------------------------
 
         st.markdown(
-            """
-            <div class="section-label">
-                WOOD DETAILS
-            </div>
-            """,
+            '<div class="section-label">WOOD</div>',
             unsafe_allow_html=True,
         )
 
         w1, w2 = st.columns(
-            2
+            2,
+            gap="medium"
         )
 
         with w1:
 
             finder_mc = st.number_input(
                 "Moisture content (%)",
-                min_value=BOUNDS[
-                    "Mc_percent"
-                ][0],
-                max_value=BOUNDS[
-                    "Mc_percent"
-                ][1],
+                min_value=BOUNDS["Mc_percent"][0],
+                max_value=BOUNDS["Mc_percent"][1],
                 value=28.0,
                 step=1.0,
                 key="finder_mc",
@@ -1208,12 +1111,8 @@ else:
 
             finder_density = st.number_input(
                 "Wood density (kg/m³)",
-                min_value=BOUNDS[
-                    "rho_od"
-                ][0],
-                max_value=BOUNDS[
-                    "rho_od"
-                ][1],
+                min_value=BOUNDS["rho_od"][0],
+                max_value=BOUNDS["rho_od"][1],
                 value=725.0,
                 step=5.0,
                 key="finder_density",
@@ -1221,26 +1120,23 @@ else:
 
 
         # ---------------------------------------------------------------------
-        # TARGET RESULTS
+        # TARGETS
         # ---------------------------------------------------------------------
 
         st.markdown(
-            """
-            <div class="section-label">
-                TARGET RESULTS
-            </div>
-            """,
+            '<div class="section-label">TARGET PERFORMANCE</div>',
             unsafe_allow_html=True,
         )
 
         t1, t2 = st.columns(
-            2
+            2,
+            gap="medium"
         )
 
         with t1:
 
             target_lp = st.number_input(
-                "Target penetration (mm)",
+                "Required penetration (mm)",
                 min_value=0.0,
                 value=10.0,
                 step=0.5,
@@ -1249,32 +1145,28 @@ else:
         with t2:
 
             target_rcca = st.number_input(
-                "Target retention (kg/m³)",
+                "Required retention (kg/m³)",
                 min_value=RETENTION_THRESHOLD,
                 value=RETENTION_THRESHOLD,
                 step=0.5,
             )
 
         find_button = st.button(
-            "Find Treatment Settings",
+            "Find Suitable Treatment",
             type="primary",
             use_container_width=True,
         )
 
 
     # =========================================================================
-    # TREATMENT SEARCH
+    # SEARCH
     # =========================================================================
 
     if find_button:
 
         with st.spinner(
-            "Finding suitable settings..."
+            "Finding suitable treatment settings..."
         ):
-
-            # -----------------------------------------------------------------
-            # REPRODUCIBLE CANDIDATE SET
-            # -----------------------------------------------------------------
 
             rng = np.random.default_rng(
                 42
@@ -1284,84 +1176,67 @@ else:
 
 
             # -----------------------------------------------------------------
-            # CANDIDATE TREATMENT SETTINGS
+            # CANDIDATES
             # -----------------------------------------------------------------
 
             cca_candidates = rng.uniform(
-                BOUNDS[
-                    "CCA_percent"
-                ][0],
-                BOUNDS[
-                    "CCA_percent"
-                ][1],
+                BOUNDS["CCA_percent"][0],
+                BOUNDS["CCA_percent"][1],
                 N_CANDIDATES,
             )
 
             pressure_candidates = rng.uniform(
-                BOUNDS[
-                    "pressure"
-                ][0],
-                BOUNDS[
-                    "pressure"
-                ][1],
+                BOUNDS["pressure"][0],
+                BOUNDS["pressure"][1],
                 N_CANDIDATES,
             )
 
             vacuum_candidates = rng.uniform(
-                BOUNDS[
-                    "vacuum"
-                ][0],
-                BOUNDS[
-                    "vacuum"
-                ][1],
+                BOUNDS["vacuum"][0],
+                BOUNDS["vacuum"][1],
                 N_CANDIDATES,
             )
 
             duration_candidates = rng.uniform(
-                BOUNDS[
-                    "duration"
-                ][0],
-                BOUNDS[
-                    "duration"
-                ][1],
+                BOUNDS["duration"][0],
+                BOUNDS["duration"][1],
                 N_CANDIDATES,
             )
 
 
             # -----------------------------------------------------------------
-            # CREATE MODEL MATRIX
+            # MODEL MATRIX
             # -----------------------------------------------------------------
 
-            candidates = pd.DataFrame({
-
-                "Mc":
-                    np.full(
+            candidates = pd.DataFrame(
+                {
+                    "Mc": np.full(
                         N_CANDIDATES,
                         finder_mc / 100.0,
                     ),
 
-                "ρod":
-                    np.full(
+                    "ρod": np.full(
                         N_CANDIDATES,
                         finder_density,
                     ),
 
-                "C(cca)":
-                    cca_candidates / 100.0,
+                    "C(cca)":
+                        cca_candidates / 100.0,
 
-                "P(kPA)":
-                    pressure_candidates,
+                    "P(kPA)":
+                        pressure_candidates,
 
-                "V(kPA)":
-                    vacuum_candidates,
+                    "V(kPA)":
+                        vacuum_candidates,
 
-                "V(t)":
-                    duration_candidates,
-            })
+                    "V(t)":
+                        duration_candidates,
+                }
+            )
 
 
             # -----------------------------------------------------------------
-            # PREDICT CANDIDATES
+            # PREDICTIONS
             # -----------------------------------------------------------------
 
             lp_mean, lp_std = (
@@ -1380,192 +1255,136 @@ else:
 
 
             # -----------------------------------------------------------------
-            # APPLY UNCERTAINTY CALIBRATION
+            # CALIBRATED UNCERTAINTY
             # -----------------------------------------------------------------
 
             lp_std = (
                 np.maximum(
                     lp_std,
-                    MIN_STD,
+                    MIN_STD
                 )
                 *
-                UNCERTAINTY_FACTORS[
-                    "Lp"
-                ]
+                UNCERTAINTY_FACTORS["Lp"]
             )
 
             rcca_std = (
                 np.maximum(
                     rcca_std,
-                    MIN_STD,
+                    MIN_STD
                 )
                 *
-                UNCERTAINTY_FACTORS[
-                    "R(cca)"
-                ]
+                UNCERTAINTY_FACTORS["R(cca)"]
             )
 
 
             # -----------------------------------------------------------------
-            # 95% LOWER BOUNDS
+            # CONSERVATIVE LOWER LIMITS
             # -----------------------------------------------------------------
 
             lp_lower = (
                 lp_mean
                 -
-                Z_95
-                *
-                lp_std
+                Z_95 * lp_std
             )
 
             rcca_lower = (
                 rcca_mean
                 -
-                Z_95
-                *
-                rcca_std
+                Z_95 * rcca_std
             )
 
 
             # -----------------------------------------------------------------
-            # IDENTIFY CANDIDATES THAT MEET BOTH TARGETS
+            # SUITABLE CANDIDATES
             # -----------------------------------------------------------------
 
             feasible = (
-
-                (
-                    lp_lower
-                    >= target_lp
-                )
-
+                (lp_lower >= target_lp)
                 &
-
-                (
-                    rcca_lower
-                    >= target_rcca
-                )
+                (rcca_lower >= target_rcca)
             )
 
-            feasible_indices = (
-                np.where(
-                    feasible
-                )[0]
-            )
+            feasible_indices = np.where(
+                feasible
+            )[0]
 
 
-            # =================================================================
-            # NO SUITABLE SETTING
-            # =================================================================
+            # -----------------------------------------------------------------
+            # NONE FOUND
+            # -----------------------------------------------------------------
 
-            if (
-                len(
-                    feasible_indices
-                )
-                == 0
-            ):
+            if len(feasible_indices) == 0:
 
                 st.warning(
-                    "No suitable treatment setting was found "
-                    "for these targets. Try adjusting the target values."
+                    "No treatment setting was found that meets "
+                    "both targets with the required confidence. "
+                    "Try reducing one of the target values."
                 )
 
 
-            # =================================================================
-            # SUITABLE SETTINGS FOUND
-            # =================================================================
+            # -----------------------------------------------------------------
+            # SELECT LOWER-INTENSITY SOLUTION
+            # -----------------------------------------------------------------
 
             else:
 
-                # -------------------------------------------------------------
-                # NORMALISE TREATMENT SETTINGS
-                # -------------------------------------------------------------
-
                 cca_norm = (
-
-                    cca_candidates
-                    -
-                    BOUNDS[
-                        "CCA_percent"
-                    ][0]
-
-                ) / (
-
-                    BOUNDS[
-                        "CCA_percent"
-                    ][1]
-                    -
-                    BOUNDS[
-                        "CCA_percent"
-                    ][0]
+                    (
+                        cca_candidates
+                        -
+                        BOUNDS["CCA_percent"][0]
+                    )
+                    /
+                    (
+                        BOUNDS["CCA_percent"][1]
+                        -
+                        BOUNDS["CCA_percent"][0]
+                    )
                 )
-
 
                 pressure_norm = (
-
-                    pressure_candidates
-                    -
-                    BOUNDS[
-                        "pressure"
-                    ][0]
-
-                ) / (
-
-                    BOUNDS[
-                        "pressure"
-                    ][1]
-                    -
-                    BOUNDS[
-                        "pressure"
-                    ][0]
+                    (
+                        pressure_candidates
+                        -
+                        BOUNDS["pressure"][0]
+                    )
+                    /
+                    (
+                        BOUNDS["pressure"][1]
+                        -
+                        BOUNDS["pressure"][0]
+                    )
                 )
-
 
                 vacuum_norm = (
-
-                    vacuum_candidates
-                    -
-                    BOUNDS[
-                        "vacuum"
-                    ][0]
-
-                ) / (
-
-                    BOUNDS[
-                        "vacuum"
-                    ][1]
-                    -
-                    BOUNDS[
-                        "vacuum"
-                    ][0]
+                    (
+                        vacuum_candidates
+                        -
+                        BOUNDS["vacuum"][0]
+                    )
+                    /
+                    (
+                        BOUNDS["vacuum"][1]
+                        -
+                        BOUNDS["vacuum"][0]
+                    )
                 )
-
 
                 duration_norm = (
-
-                    duration_candidates
-                    -
-                    BOUNDS[
-                        "duration"
-                    ][0]
-
-                ) / (
-
-                    BOUNDS[
-                        "duration"
-                    ][1]
-                    -
-                    BOUNDS[
-                        "duration"
-                    ][0]
+                    (
+                        duration_candidates
+                        -
+                        BOUNDS["duration"][0]
+                    )
+                    /
+                    (
+                        BOUNDS["duration"][1]
+                        -
+                        BOUNDS["duration"][0]
+                    )
                 )
 
-
-                # -------------------------------------------------------------
-                # RELATIVE TREATMENT INTENSITY
-                # -------------------------------------------------------------
-
                 treatment_intensity = (
-
                     cca_norm
                     +
                     pressure_norm
@@ -1573,28 +1392,19 @@ else:
                     vacuum_norm
                     +
                     duration_norm
-
                 ) / 4.0
 
-
-                feasible_intensity = (
-                    treatment_intensity[
-                        feasible_indices
-                    ]
-                )
-
-
-                best_index = (
-                    feasible_indices[
-                        np.argmin(
-                            feasible_intensity
-                        )
-                    ]
-                )
+                best_index = feasible_indices[
+                    np.argmin(
+                        treatment_intensity[
+                            feasible_indices
+                        ]
+                    )
+                ]
 
 
                 # -------------------------------------------------------------
-                # BEST SETTINGS
+                # SELECTED SETTINGS
                 # -------------------------------------------------------------
 
                 best_cca = float(
@@ -1623,7 +1433,7 @@ else:
 
 
                 # -------------------------------------------------------------
-                # BEST EXPECTED RESULTS
+                # SELECTED PERFORMANCE
                 # -------------------------------------------------------------
 
                 best_lp = float(
@@ -1651,101 +1461,84 @@ else:
                 )
 
 
-                # -------------------------------------------------------------
-                # RESULT RANGES
-                # -------------------------------------------------------------
-
                 best_lp_lower = (
                     best_lp
                     -
-                    Z_95
-                    *
-                    best_lp_std
+                    Z_95 * best_lp_std
                 )
 
                 best_lp_upper = (
                     best_lp
                     +
-                    Z_95
-                    *
-                    best_lp_std
+                    Z_95 * best_lp_std
                 )
 
                 best_rcca_lower = (
                     best_rcca
                     -
-                    Z_95
-                    *
-                    best_rcca_std
+                    Z_95 * best_rcca_std
                 )
 
                 best_rcca_upper = (
                     best_rcca
                     +
-                    Z_95
-                    *
-                    best_rcca_std
+                    Z_95 * best_rcca_std
                 )
 
 
                 # =============================================================
-                # DISPLAY RECOMMENDATION
+                # DISPLAY
                 # =============================================================
 
-                st.success(
-                    "✓ Suitable treatment settings found."
+                st.markdown(
+                    '<div class="status-good">'
+                    '✓ Suitable treatment found.'
+                    '</div>',
+                    unsafe_allow_html=True,
                 )
-
-
-                # -------------------------------------------------------------
-                # RECOMMENDED SETTINGS
-                # -------------------------------------------------------------
 
                 st.subheader(
-                    "Recommended Settings"
+                    "Recommended Treatment"
                 )
 
                 s1, s2, s3, s4 = st.columns(
-                    4
+                    4,
+                    gap="medium"
                 )
 
                 s1.metric(
                     "CCA concentration",
-                    f"{best_cca:.2f}%",
+                    f"{best_cca:.2f}%"
                 )
 
                 s2.metric(
                     "Pressure",
-                    f"{best_pressure:.2f} kPa",
+                    f"{best_pressure:.2f} kPa"
                 )
 
                 s3.metric(
                     "Vacuum",
-                    f"{best_vacuum:.2f} kPa",
+                    f"{best_vacuum:.2f} kPa"
                 )
 
                 s4.metric(
                     "Vacuum time",
-                    f"{best_duration:.0f} min",
+                    f"{best_duration:.0f} min"
                 )
 
 
                 # -------------------------------------------------------------
-                # EXPECTED RESULTS
+                # EXPECTED PERFORMANCE
                 # -------------------------------------------------------------
 
                 st.subheader(
-                    "Expected Results"
+                    "Expected Performance"
                 )
 
                 p1, p2 = st.columns(
-                    2
+                    2,
+                    gap="medium"
                 )
-
-
-                # -------------------------------------------------------------
-                # PENETRATION
-                # -------------------------------------------------------------
 
                 with p1:
 
@@ -1754,11 +1547,9 @@ else:
                     ):
 
                         st.markdown(
-                            """
-                            <div class="section-label">
-                                PENETRATION
-                            </div>
-                            """,
+                            '<div class="section-label">'
+                            'PENETRATION'
+                            '</div>',
                             unsafe_allow_html=True,
                         )
 
@@ -1768,26 +1559,18 @@ else:
                         )
 
                         st.markdown(
-                            f"""
-                            <div class="result-range">
-                                <strong>Expected range</strong><br>
-                                {best_lp_lower:.2f} – {best_lp_upper:.2f} mm
-                                <br>
-                                <span style="
-                                    color:#6C7D74;
-                                    font-size:0.82rem;
-                                ">
-                                    Target: {target_lp:.2f} mm
-                                </span>
-                            </div>
-                            """,
+                            (
+                                '<div class="result-range">'
+                                '<strong>Likely range</strong><br>'
+                                f"{best_lp_lower:.2f} – "
+                                f"{best_lp_upper:.2f} mm"
+                                '<br>'
+                                f"Required: {target_lp:.2f} mm"
+                                '</div>'
+                            ),
                             unsafe_allow_html=True,
                         )
 
-
-                # -------------------------------------------------------------
-                # RETENTION
-                # -------------------------------------------------------------
 
                 with p2:
 
@@ -1796,11 +1579,9 @@ else:
                     ):
 
                         st.markdown(
-                            """
-                            <div class="section-label">
-                                CCA RETENTION
-                            </div>
-                            """,
+                            '<div class="section-label">'
+                            'CCA RETENTION'
+                            '</div>',
                             unsafe_allow_html=True,
                         )
 
@@ -1810,32 +1591,26 @@ else:
                         )
 
                         st.markdown(
-                            f"""
-                            <div class="result-range">
-                                <strong>Expected range</strong><br>
-                                {best_rcca_lower:.2f} – {best_rcca_upper:.2f} kg/m³
-                                <br>
-                                <span style="
-                                    color:#6C7D74;
-                                    font-size:0.82rem;
-                                ">
-                                    Target: {target_rcca:.2f} kg/m³
-                                </span>
-                            </div>
-                            """,
+                            (
+                                '<div class="result-range">'
+                                '<strong>Likely range</strong><br>'
+                                f"{best_rcca_lower:.2f} – "
+                                f"{best_rcca_upper:.2f} kg/m³"
+                                '<br>'
+                                f"Required: {target_rcca:.2f} kg/m³"
+                                '</div>'
+                            ),
                             unsafe_allow_html=True,
                         )
 
 
 # =============================================================================
-# 18. SMALL FOOTER
+# 16. FOOTER
 # =============================================================================
 
 st.markdown(
-    """
-    <div class="app-footer">
-        CCA Treatment Decision Support
-    </div>
-    """,
+    '<div class="app-footer">'
+    'CCA Wood Treatment Decision Support'
+    '</div>',
     unsafe_allow_html=True,
 )
